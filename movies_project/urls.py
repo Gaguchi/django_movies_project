@@ -17,8 +17,10 @@ Including another URLconf
 # movies_project/urls.py
 from django.contrib import admin
 from django.urls import path, include
+from movies_app.views import home  # Import the home view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('movies_app.urls')),  # Add this line
+    path('api/', include('movies_app.urls')),
+    path('', home, name='home'),  # Add this line for the root URL
 ]

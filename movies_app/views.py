@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # movies_app/views.py
 from rest_framework import viewsets
@@ -16,3 +17,7 @@ class LikeViewSet(viewsets.ModelViewSet):
 class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
+
+
+def home(request):
+    return HttpResponse('Welcome to the Movie Matcher API!')
